@@ -1,4 +1,4 @@
-- hosts: kube-masters[0]
+- hosts: kube_masters[0]
   gather_facts: no
 
   tasks:
@@ -11,7 +11,7 @@
       set_fact:
         join_command: "{{ join_command_raw.stdout_lines[0] }}"
 
-- hosts: kube-nodes
+- hosts: kube_nodes
   become: yes
 
   vars:
